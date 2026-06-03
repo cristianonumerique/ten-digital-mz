@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Digital Moçambique - Loja Online</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">💼 Ten Digital MZ</div>
+            <ul class="nav-links">
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#carrinho">Carrinho</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Bem-vindo à Ten Digital Moçambique</h1>
+            <p>Produtos de qualidade com pagamento seguro via Stripe e PayPal</p>
+            <a href="#produtos" class="btn btn-primary">Ver Produtos</a>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="produtos">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">📱</div>
+                    <h3>Smartphone</h3>
+                    <p>Smartphone de última geração</p>
+                    <p class="price">$299.99</p>
+                    <button class="btn btn-add" data-product-id="1" data-product-name="Smartphone" data-product-price="299.99">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💻</div>
+                    <h3>Laptop</h3>
+                    <p>Laptop profissional potente</p>
+                    <p class="price">$899.99</p>
+                    <button class="btn btn-add" data-product-id="2" data-product-name="Laptop" data-product-price="899.99">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🎧</div>
+                    <h3>Headphones</h3>
+                    <p>Fones de ouvido com som premium</p>
+                    <p class="price">$149.99</p>
+                    <button class="btn btn-add" data-product-id="3" data-product-name="Headphones" data-product-price="149.99">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">⌚</div>
+                    <h3>Smartwatch</h3>
+                    <p>Relógio inteligente versátil</p>
+                    <p class="price">$199.99</p>
+                    <button class="btn btn-add" data-product-id="4" data-product-name="Smartwatch" data-product-price="199.99">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrinho -->
+    <section id="carrinho" class="carrinho">
+        <div class="container">
+            <h2>Seu Carrinho</h2>
+            <div class="cart-content">
+                <div id="cart-items" class="cart-items">
+                    <p class="empty-cart">Carrinho vazio</p>
+                </div>
+                <div class="cart-summary">
+                    <h3>Resumo</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Impostos:</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                    <button class="btn btn-primary btn-full" id="checkout-stripe" data-checkout-stripe>
+                        💳 Pagar com Stripe
+                    </button>
+                    <button class="btn btn-warning btn-full" id="checkout-paypal" data-checkout-paypal>
+                        🅿️ Pagar com PayPal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat IA -->
+    <div id="chat-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Ten Digital Moçambique. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="app-payments.js"></script>
+    <script src="app-chat.js"></script>
+</body>
+</html>
