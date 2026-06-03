@@ -1,0 +1,105 @@
+/* Responsivo para tablets e mobile */
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .produtos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .chat-box {
+        width: 100vw;
+        height: 70vh;
+        max-width: 100%;
+    }
+
+    .resgate-form {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        max-width: 90vw;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produto-card {
+        margin: 0 auto;
+    }
+
+    .resgate-card {
+        padding: 1.5rem;
+    }
+
+    .resgate-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .chat-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .chat-box {
+        width: 100vw;
+        height: 60vh;
+    }
+
+    .tabs {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
