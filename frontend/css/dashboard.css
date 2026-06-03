@@ -1,0 +1,173 @@
+/* Dashboard Styles */
+
+.dashboard-section {
+    min-height: 100vh;
+    background: var(--light);
+    padding: 2rem 0;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dashboard-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+}
+
+.stat-content h3 {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-content p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.dashboard-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.dashboard-tabs .tab-btn {
+    padding: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #999;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.3s;
+}
+
+.dashboard-tabs .tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.tab-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.purchases-list,
+.codes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.purchase-item,
+.code-item {
+    background: var(--light);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purchase-info h4,
+.code-info h4 {
+    margin-bottom: 0.5rem;
+}
+
+.purchase-info p,
+.code-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge-completo {
+    background: #10b981;
+    color: white;
+}
+
+.badge-pendente {
+    background: #f39c12;
+    color: white;
+}
+
+.badge-ativo {
+    background: #3498db;
+    color: white;
+}
+
+.badge-usado {
+    background: #95a5a6;
+    color: white;
+}
+
+.account-info {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.account-info p {
+    margin: 1rem 0;
+}
+
+.account-info button {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .purchase-item,
+    .code-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .purchase-status,
+    .code-status {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

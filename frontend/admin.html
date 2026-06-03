@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Ten Digital MZ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2>🎮 TEN ADMIN</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" onclick="switchAdminTab('dashboard')">📊 Dashboard</a>
+            <a href="#" class="nav-item" onclick="switchAdminTab('produtos')">📦 Produtos</a>
+            <a href="#" class="nav-item" onclick="switchAdminTab('codigos')">🎁 Códigos</a>
+            <a href="#" class="nav-item" onclick="switchAdminTab('vendas')">💰 Vendas</a>
+            <a href="#" class="nav-item" onclick="switchAdminTab('usuarios')">👥 Usuários</a>
+            <a href="index.html" class="nav-item">🏠 Voltar</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Header -->
+        <div class="admin-header">
+            <h1>Painel de Administração</h1>
+            <button class="btn-logout" onclick="logout()">Sair</button>
+        </div>
+
+        <!-- Dashboard Tab -->
+        <div id="dashboardTab" class="admin-tab active">
+            <h2>📊 Dashboard</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3>Total de Usuários</h3>
+                    <p id="statsUsers" class="stat-number">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Vendas Completas</h3>
+                    <p id="statsPurchases" class="stat-number">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Receita Total</h3>
+                    <p id="statsRevenue" class="stat-number">0 MZN</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Códigos Ativos</h3>
+                    <p id="statsActiveCodes" class="stat-number">0</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Vendas por Categoria</h3>
+                <div id="salesByCategory" class="chart">
+                    <p>Carregando...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Produtos Tab -->
+        <div id="produtosTab" class="admin-tab">
+            <h2>📦 Gerenciar Produtos</h2>
+            <button class="btn-primary" onclick="openAddProductModal()">+ Novo Produto</button>
+            <div id="produtosList" class="products-list">
+                <p>Carregando...</p>
+            </div>
+        </div>
+
+        <!-- Códigos Tab -->
+        <div id="codigosTab" class="admin-tab">
+            <h2>🎁 Gerenciar Códigos</h2>
+            <button class="btn-primary" onclick="openGenerateCodesModal()">+ Gerar Códigos</button>
+            <div class="filter-section">
+                <input type="text" id="codeFilter" placeholder="Filtrar por status..." onchange="filterCodes()">
+            </div>
+            <div id="codigosList" class="codes-list">
+                <p>Carregando...</p>
+            </div>
+        </div>
+
+        <!-- Vendas Tab -->
+        <div id="vendasTab" class="admin-tab">
+            <h2>💰 Histórico de Vendas</h2>
+            <div class="filter-section">
+                <input type="date" id="startDate" placeholder="Data inicial">
+                <input type="date" id="endDate" placeholder="Data final">
+                <button class="btn-primary" onclick="filterSales()">Filtrar</button>
+            </div>
+            <div id="vendasList" class="sales-list">
+                <p>Carregando...</p>
+            </div>
+        </div>
+
+        <!-- Usuários Tab -->
+        <div id="usuariosTab" class="admin-tab">
+            <h2>👥 Usuários</h2>
+            <div id="usuariosList" class="users-list">
+                <p>Carregando...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="addProductModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModals()">&times;</span>
+            <h2>Novo Produto</h2>
+            <form onsubmit="saveProduct(event)">
+                <input type="text" id="productName" placeholder="Nome do Produto" required>
+                <select id="productCategory" required>
+                    <option value="">Selecione Categoria</option>
+                    <option value="recarga">Recarga</option>
+                    <option value="gift-card">Gift Card</option>
+                    <option value="streaming">Streaming</option>
+                </select>
+                <input type="number" id="productPrice" placeholder="Preço" step="0.01" required>
+                <input type="text" id="productDescription" placeholder="Descrição">
+                <button type="submit" class="btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="generateCodesModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModals()">&times;</span>
+            <h2>Gerar Códigos</h2>
+            <form onsubmit="generateCodes(event)">
+                <select id="productSelect" required>
+                    <option value="">Selecione Produto</option>
+                </select>
+                <input type="number" id="codeQuantity" placeholder="Quantidade" min="1" required>
+                <input type="number" id="codeExpires" placeholder="Dias para expirar" value="365" min="1">
+                <button type="submit" class="btn-primary">Gerar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

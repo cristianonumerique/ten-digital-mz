@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Ten Digital MZ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">🎮 TEN DIGITAL MZ</a></h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="index.html#produtos">Produtos</a>
+                <a href="index.html#resgate">Resgate</a>
+                <button class="btn-login" onclick="logout()">🚪 Sair</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>📊 Meu Dashboard</h2>
+                <p id="userName">Olá, usuário!</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Stats Cards -->
+                <div class="stat-card">
+                    <div class="stat-icon">🛒</div>
+                    <div class="stat-content">
+                        <h3>Compras Realizadas</h3>
+                        <p id="totalPurchases">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3>Total Gasto</h3>
+                        <p id="totalSpent">0 MZN</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎁</div>
+                    <div class="stat-content">
+                        <h3>Códigos Ativos</h3>
+                        <p id="activeCodes">0</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <h3>Códigos Usados</h3>
+                        <p id="usedCodes">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" onclick="switchDashboardTab('purchases')">🛒 Minhas Compras</button>
+                <button class="tab-btn" onclick="switchDashboardTab('codes')">🎁 Meus Códigos</button>
+                <button class="tab-btn" onclick="switchDashboardTab('account')">👤 Conta</button>
+            </div>
+
+            <!-- Compras Tab -->
+            <div id="purchasesTab" class="tab-content active">
+                <h3>Minhas Compras</h3>
+                <div id="purchasesList" class="purchases-list">
+                    <p>Carregando...</p>
+                </div>
+            </div>
+
+            <!-- Códigos Tab -->
+            <div id="codesTab" class="tab-content">
+                <h3>Meus Códigos de Resgate</h3>
+                <div id="codesList" class="codes-list">
+                    <p>Carregando...</p>
+                </div>
+            </div>
+
+            <!-- Account Tab -->
+            <div id="accountTab" class="tab-content">
+                <h3>Informações da Conta</h3>
+                <div class="account-info">
+                    <p><strong>Nome:</strong> <span id="accountName">-</span></p>
+                    <p><strong>Email:</strong> <span id="accountEmail">-</span></p>
+                    <p><strong>Membro desde:</strong> <span id="accountDate">-</span></p>
+                    <button class="btn-primary" onclick="logout()">Sair da Conta</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ten Digital MZ. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
